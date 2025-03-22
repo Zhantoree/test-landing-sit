@@ -1,0 +1,12 @@
+@use '@/utils' as *;
+
+@media screen and (min-width: 0em){
+  .benefits {
+
+    h2 {
+      font-weight: 700;
+      font-size: em(25);
+    }
+  }
+}
+
