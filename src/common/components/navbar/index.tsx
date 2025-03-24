@@ -58,6 +58,8 @@ const NavBar = () => {
            src={isOpen ? CloseIcon : BurgerIcon}
            className={s['toggle-button']}
            alt="CloseIcon"
+           width={30}
+           height={30}
       />
 
       <ul className={`${s['nav-items']} ${isOpen ? s.open : ''}`}>

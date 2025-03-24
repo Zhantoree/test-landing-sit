@@ -81,7 +81,7 @@ const Home = () => {
   const [tab, setTab] = useState(tabs[0]);
   return (
     <>
-      <section className={s.benefits}>
+      <section className={s.benefits} aria-labelledby="benefits-heading">
         <div className={s.container}>
           <h1>Инновационные решения для вашего бизнеса</h1>
           <div className={s['info-cards']}>
@@ -98,19 +98,25 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className={s.work}>
+      <section className={s.work} aria-labelledby="work-heading">
         <h2>Наши работы</h2>
         <p>Ознакомьтесь с нашими лучшими проектами в различных категориях</p>
-        <ul className={s.tabs}>
+        <ul className={s.tabs} aria-label="Категории работ">
           {tabs.map((currTab: string) => (
             <li
               key={currTab}
+              role="tab"
+              tabIndex={0}
+              aria-selected={currTab === tab}
               className={`${s.tab} ${currTab === tab ? s.active : ''}`}
               onClick={() => setTab(currTab)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') setTab(currTab);
+              }}
             >{currTab}</li>
           ))}
         </ul>
-        <div className={s['work-cards']}>
+        <div className={s['work-cards']} role="tabpanel" aria-labelledby="work-heading">
           {
             workCards.map((card) => (
               <WorkCard key={card.label}
