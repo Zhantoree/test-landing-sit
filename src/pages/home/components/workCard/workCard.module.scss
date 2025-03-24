@@ -1,0 +1,80 @@
+@use '/src/common/styles/utils' as *;
+
+
+@media screen and (min-width: 0em) {
+  .card {
+    background-color: var(--color-gray);
+    min-width: em(280);
+    width: 100%;
+    height: em(262);
+    border-radius: em(8);
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    .label {
+      font-weight: 700;
+      width: 100%;
+      font-size: em(16);
+      color: var(--color-gray-dark);
+      transition: color 0.3s ease;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: em(18);
+      color: white;
+    }
+
+    .type {
+      font-weight: 500;
+      font-size: em(12);
+      color: var(--color-accent);
+    }
+
+    a {
+      font-size: em(14);
+      width: em(94, 14);
+      color: white;
+      text-decoration: none;
+      border-radius: em(4, 14);
+      background-color: var(--color-primary);
+      padding: em(6, 14) em(8, 14);
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--color-primary-light);
+      }
+    }
+
+    .backside {
+      position: absolute;
+      width: 100%;
+      height: em(120);
+      padding: em(10) 0;
+      visibility: hidden;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &:hover {
+      background-color: #2A324BB3;
+
+      .label {
+        color: #2A324BB3;
+      }
+
+      .backside {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

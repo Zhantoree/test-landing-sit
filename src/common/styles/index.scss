@@ -9,6 +9,9 @@
   --color-gray-dark: #9DA5B9;
 
   --body-text: #000;
+
+  --font-size-base: 16px;
+
 }
 
 @font-face {
@@ -16,28 +19,28 @@
   font-style: normal;
   font-weight: 700;
   src: local(''),
-  url('../fonts/Inter_18pt-Bold.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../../assets/fonts/Inter_18pt-Bold.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   src: local(''),
-  url('../fonts/Inter_18pt-SemiBold.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../../assets/fonts/Inter_18pt-SemiBold.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   src: local(''),
-  url('../fonts/Inter_18pt-Medium.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../../assets/fonts/Inter_18pt-Medium.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   src: local(''),
-  url('../fonts/Inter_18pt-Regular.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../../assets/fonts/Inter_18pt-Regular.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
 }
 
 body, html {
@@ -46,6 +49,7 @@ body, html {
   font-family: 'Inter', sans-serif;
   color: var(--body-text);
   overflow-x: hidden;
+  font-size: var(--font-size-base);
 }
 
 *, *:before, *:after {
@@ -61,29 +65,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (min-width: 0em) {
-  body, html {
-    font-size: 100%;
+  :root {
+    --font-size-base: 16px;
   }
 }
-@media only screen and (min-width: 320px) {
-  body, html {
-    font-size: 14px;
-  }
-}
-
-
-
-@media only screen and (min-width: 768px) {
-  body, html {
-    font-size: 16px;
-  }
-}
-
 
 
 @media only screen and (min-width: 2000px) {
   body, html {
     font-size: .85vw;
   }
+}
+
+#root {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 

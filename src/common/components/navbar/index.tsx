@@ -1,7 +1,7 @@
 import s from './index.module.scss';
 import CloseIcon from '@/assets/icons/close.svg';
 import BurgerIcon from '@/assets/icons/burger.svg';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { useEffect, useState } from 'react';
 
 
@@ -30,17 +30,23 @@ const navItems: NavItem[] = [
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(window.innerWidth > 767);
+  const location = useLocation();
 
   const toggleNavBar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleRedirect = () => {
+    if (window.innerWidth < 768) {
+      setIsOpen(false);
+    }
+  };
 
   const handleResize = () => setIsOpen(window.innerWidth > 767);
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [])
+  }, []);
 
   return (
     <nav id={s.navigation}>
@@ -57,8 +63,11 @@ const NavBar = () => {
       <ul className={`${s['nav-items']} ${isOpen ? s.open : ''}`}>
         {
           navItems.map((item) => (
-            <li className={s['nav-item']} key={item.label}>
-              <Link to={item.link}>{item.label}</Link>
+            <li className={`${s['nav-item']} ${location.pathname === item.link ? s.active : ''}`} key={item.label}>
+              <Link
+                to={item.link}
+                onClick={handleRedirect}
+              >{item.label}</Link>
             </li>
           ))
         }

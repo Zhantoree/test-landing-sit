@@ -1,10 +1,14 @@
-@use '/src/utils' as *;
+@use '/src/common/styles/utils' as *;
+@use '/src/common/styles/tokens' as *;
+@use '/src/common/styles/mixins' as *;
+
 
 @media screen and (min-width: 0em) {
   #navigation {
+    position: relative;
     height: em(50);
     width: 100%;
-    padding: 0 em(17);
+    @include responsive-padding($nav-padding);
     background-color: var(--color-dark);
     display: flex;
     justify-content: space-between;
@@ -25,7 +29,7 @@
       position: absolute;
       z-index: 101;
       top: em(10);
-      right: em(17);
+      right: em(20);
       width: em(30);
       height: em(30);
       cursor: pointer;
@@ -81,6 +85,14 @@
           }
 
         }
+
+        &.active {
+          a {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
       }
     }
   }
@@ -96,10 +108,6 @@
 
 @media screen and (min-width: 768px) {
   #navigation {
-
-    padding: 0 em(70);
-
-
     .toggle-button {
       display: none;
     }
@@ -115,6 +123,7 @@
       .nav-item {
         height: 100%;
         display: flex;
+
         a {
           margin: auto 0 !important;
           font-size: em(16);
@@ -135,9 +144,6 @@
 
 @media screen and (min-width: 1400px) {
   #navigation {
-
-    padding: 0 em(153);
-
     .nav-items {
       width: 35%;
     }

@@ -1,0 +1,5 @@
+$default-font-base: 16;
+
+@function em($px, $base: $default-font-base) {
+  @return calc($px / $base) * 1em;
+}

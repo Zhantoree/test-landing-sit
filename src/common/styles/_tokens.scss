@@ -1,0 +1,7 @@
+@use '/src/common/styles/utils' as *;
+
+$nav-padding: (
+        mobile: em(20),
+        tablet: em(70),
+        desktop: em(153)
+);

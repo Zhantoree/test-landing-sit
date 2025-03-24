@@ -1,0 +1,74 @@
+@use '/src/common/styles/utils' as *;
+
+@media screen and (min-width: 0em) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    position: relative;
+    align-items: center;
+    padding: 0 em(20) 0 em(12, 20);
+    margin-top: em(64);
+    border-radius: em(8);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    bottom: 0;
+    cursor: pointer;
+
+
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      bottom: 5px;
+    }
+
+    picture {
+      position: absolute;
+      width: em(60);
+      top: em(-40);
+
+      img {
+        width: 100%;
+        height: auto;
+        min-width: 60px;
+        min-height: 60px;
+      }
+    }
+
+    h2 {
+      font-size: em(20);
+      padding: em(47, 20) 0 em(12, 20) 0;
+    }
+
+    p {
+      font-size: em(14);
+      text-align: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      padding: em(20) 0;
+
+      p {
+        color: var(--color-gray-dark);
+        font-size: em(14);
+      }
+
+      .tags {
+
+        span {
+          font-size: em(12);
+          background: var(--color-gray);
+          padding: em(4, 12) em(8, 12);
+          margin-left: em(6);
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+
