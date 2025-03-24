@@ -19,28 +19,32 @@
   font-style: normal;
   font-weight: 700;
   src: local(''),
-  url('../../assets/fonts/Inter_18pt-Bold.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('/fonts/Inter-Bold.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   src: local(''),
-  url('../../assets/fonts/Inter_18pt-SemiBold.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('/fonts/Inter-SemiBold.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   src: local(''),
-  url('../../assets/fonts/Inter_18pt-Medium.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('/fonts/Inter-Medium.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   src: local(''),
-  url('../../assets/fonts/Inter_18pt-Regular.ttf') format('opentype'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 body, html {
